@@ -19,6 +19,9 @@ class JobSubmission extends Model
         'title',
         'description',
         'first_submission',
+        'department',
+        'qualification',
+        'location',
         'approved',
     ];
 }

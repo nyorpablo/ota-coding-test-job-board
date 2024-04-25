@@ -16,6 +16,9 @@ class JobListing extends Model
      */
     protected $fillable = [
         'title',
+        'department',
+        'qualification',
+        'location',
         'description',
     ];
 }

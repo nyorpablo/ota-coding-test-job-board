@@ -15,12 +15,22 @@
                 <a href="{{ route('moderator.index') }}" class="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600">Moderator Page</a>
             </div>
         </div>
+
+         <!-- Search Form -->
+         <form action="{{ route('job_listings.index') }}" method="get" class="mb-4">
+            <input type="text" name="search" placeholder="Search by title" class="border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500">
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md ml-2 hover:bg-blue-600">Search</button>
+        </form>
         
         <div class="grid gap-4">
             @foreach($jobListings as $jobListing)
             <div class="bg-gray-200 p-4 rounded-md shadow-md">
-                <h2 class="text-lg font-semibold">{{ $jobListing->title }}</h2>
-                <p class="text-gray-700">{{ $jobListing->description }}</p>
+                <h2 class="text-lg font-semibold">{{ $jobListing['title'] }}</h2>
+                <p class="text-gray-700">{{ $jobListing['description'] }}</p>
+                <!-- Add more details here -->
+                <p class="text-gray-600">Location: {{ $jobListing['location'] }}</p>
+                <p class="text-gray-600">Employment Type: {{ $jobListing['employment_type'] }}</p>
+                <p class="text-gray-600">Required Qualifications: {{ $jobListing['qualifications'] }}</p>
             </div>
             @endforeach
         </div>

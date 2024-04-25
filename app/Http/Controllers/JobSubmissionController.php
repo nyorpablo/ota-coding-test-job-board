@@ -19,6 +19,9 @@ class JobSubmissionController extends Controller
         $validatedData = $request->validate([
             'email' => 'required|email',
             'title' => 'required',
+            'qualification' => 'required',
+            'location' => 'required',
+            'department' => 'required',
             'description' => 'required',
         ]);
 
@@ -29,6 +32,9 @@ class JobSubmissionController extends Controller
         $jobSubmission = JobSubmission::create([
             'email' => $validatedData['email'],
             'title' => $validatedData['title'],
+            'qualification' => $validatedData['qualification'],
+            'location' => $validatedData['location'],
+            'department' => $validatedData['department'],
             'description' => $validatedData['description'],
             'first_submission' => $firstSubmission,
         ]);

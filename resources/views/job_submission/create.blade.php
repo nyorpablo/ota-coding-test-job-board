@@ -26,11 +26,24 @@
                 <label for="title" class="block text-gray-700 font-bold mb-2">Title:</label>
                 <input type="text" id="title" name="title" required class="block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500">
             </div>
+            <div class="mb-4">
+                <label for="qualification" class="block text-gray-700 font-bold mb-2">Qualification:</label>
+                <input type="text" id="qualification" name="qualification" required class="block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500">
+            </div>
+            <div class="mb-4">
+                <label for="location" class="block text-gray-700 font-bold mb-2">Location:</label>
+                <input type="text" id="location" name="location" required class="block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500">
+            </div>
+            <div class="mb-4">
+                <label for="department" class="block text-gray-700 font-bold mb-2">Department:</label>
+                <input type="text" id="department" name="department" required class="block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500">
+            </div>
             <div class="mb-6">
                 <label for="description" class="block text-gray-700 font-bold mb-2">Description:</label>
                 <textarea id="description" name="description" required rows="4" class="block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"></textarea>
             </div>
             <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Submit</button>
+            <a href="{{ url('/') }}" class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600">Cancel</a>
         </form>
     </div>
 </body>

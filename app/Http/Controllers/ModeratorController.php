@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\JobSubmission;
+use App\Models\JobListing;
 
 class ModeratorController extends Controller
 {
@@ -16,7 +17,13 @@ class ModeratorController extends Controller
     public function approve($id)
     {
         $submission = JobSubmission::findOrFail($id);
-        // Approve logic goes here, for example, updating a field in the database
+        $jobListing = new JobListing();
+        $jobListing->title = (string) $submission->title;
+        $jobListing->description = (string) $submission->description;
+        $jobListing->qualification = (string) $submission->qualification;
+        $jobListing->location = (string) $submission->location;
+        $jobListing->department = (string) $submission->department;
+        $jobListing->save();
         $submission->update(['approved' => true]);
         return redirect()->route('moderator.index')->with('success', 'Job submission approved!');
     }

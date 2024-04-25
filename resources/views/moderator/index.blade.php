@@ -8,7 +8,12 @@
 </head>
 <body class="bg-gray-100 py-12 px-4">
     <div class="max-w-3xl mx-auto bg-white p-6 shadow-md rounded-md">
-        <h1 class="text-2xl font-semibold mb-6">Moderator Dashboard</h1>
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="text-2xl font-semibold">Moderator Dashboard</h1>
+            <div>
+                <a href="{{ route('job_listings.index') }}" class="bg-red-500 text-white py-2 px-4 rounded-md mr-2 hover:bg-red-600">Go Back</a>
+            </div>
+        </div>
 
         @if(session('success'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">

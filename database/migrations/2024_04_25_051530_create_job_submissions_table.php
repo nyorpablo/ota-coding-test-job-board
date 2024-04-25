@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('email');
             $table->string('title');
+            $table->string('department');
+            $table->string('qualification');
+            $table->string('location');
             $table->text('description');
             $table->boolean('first_submission')->default(true);
             $table->timestamps();

@@ -14,9 +14,9 @@ class JobSubmissionNotification extends Notification
     /**
      * Create a new notification instance.
      */
-    public function __construct()
+    public function __construct($jobSubmission)
     {
-        //
+        $this->submission = $jobSubmission;
     }
 
     /**
